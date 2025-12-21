@@ -1,0 +1,342 @@
+:root {
+    /* Accent Colors */
+    --accent-primary: #712c28;
+    --accent-light: #9a4540;
+    --accent-dark: #5a2826;
+
+    /* Text Colors */
+    --text-primary: #2c3e50;
+    --text-secondary: #5a5a5a;
+    --text-light: #7a7a7a;
+
+    /* Background Colors */
+    --bg-gradient-start: #f5f7fa;
+    --bg-gradient-end: #e8ecf1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(to bottom, #5a2321, #712c28);
+    padding: 1.2rem 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.header-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+}
+
+.header-address {
+    display: flex;
+    align-items: center;
+}
+
+.header-address p {
+    font-size: 0.85rem;
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.sign-in-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0.5rem 1.25rem;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.sign-in-link:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.8);
+    color: white;
+}
+
+.logo {
+    height: 64px;
+    width: auto;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-text {
+    height: 60px;
+    width: auto;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.building-photo {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.welcome {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.welcome h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--accent-dark);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.welcome p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    font-weight: 300;
+}
+
+.welcome p:last-child {
+    margin-bottom: 0;
+}
+
+.info {
+    background: linear-gradient(135deg, #5a2321 0%, #712c28 100%);
+    padding: 4rem 2rem;
+    margin: 0;
+    width: 100%;
+    position: relative;
+}
+
+.info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--accent-light), transparent);
+    opacity: 0.5;
+}
+
+.info > * {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.documents h2 {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    margin-bottom: 1.25rem;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.documents ul {
+    list-style: none;
+}
+
+.documents li {
+    margin-bottom: 1rem;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+.documents li:hover {
+    transform: translateX(8px);
+}
+
+.documents a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+.documents a::before {
+    content: '→';
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.documents a:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.documents a:hover {
+    color: #ffffff;
+}
+
+footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: var(--text-light);
+    margin-top: 4rem;
+    font-size: 0.95rem;
+    background: linear-gradient(to top, rgba(255,255,255,0.4), transparent);
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1.5rem 1rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 1.25rem;
+        align-items: center;
+    }
+
+    .logo-container {
+        order: 1;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .header-right {
+        order: 2;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        width: 100%;
+    }
+
+    .header-address {
+        order: 2;
+    }
+
+    .header-nav {
+        order: 1;
+    }
+
+    .header-address p {
+        font-size: 0.85rem;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .logo {
+        height: 70px;
+    }
+
+    .logo-text {
+        height: 65px;
+    }
+
+    .sign-in-link {
+        font-size: 0.95rem;
+        padding: 0.45rem 1.1rem;
+    }
+
+    .welcome {
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+    }
+
+    .welcome h1 {
+        font-size: 2rem;
+    }
+
+    .welcome p {
+        font-size: 1.05rem;
+    }
+
+    .info {
+        padding: 3rem 1.5rem;
+    }
+
+    .hero {
+        height: 350px;
+    }
+
+    .address h2,
+    .documents h2 {
+        font-size: 1.6rem;
+    }
+
+    .address p,
+    .documents a {
+        font-size: 1.05rem;
+    }
+}
