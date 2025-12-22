@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -39,12 +40,21 @@
         </section>
 
         <section class="info">
-            <div class="documents">
-                <h2>HOA Documents</h2>
-                <ul>
-                    <li><a href="documents/ccrs.pdf" target="_blank">CC&Rs (Covenants, Conditions & Restrictions)</a></li>
-                    <li><a href="documents/bylaws.pdf" target="_blank">Bylaws</a></li>
-                </ul>
+            <div class="info-content">
+                <div id="map" class="map-container"></div>
+                <div class="documents">
+                    <h2>Information</h2>
+                    <address>
+                        423 7th Street<br>
+                        Oakland, CA 94607
+                    </address>
+
+                    <h2>HOA Documents</h2>
+                    <ul>
+                        <li><a href="documents/ccrs.pdf" target="_blank">CC&Rs (Covenants, Conditions & Restrictions)</a></li>
+                        <li><a href="documents/bylaws.pdf" target="_blank">Bylaws</a></li>
+                    </ul>
+                </div>
             </div>
         </section>
     </main>
@@ -52,5 +62,25 @@
     <footer>
         <p>&copy; 2026 8 Orchids Homeowners Association</p>
     </footer>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoicnNyZXVzc2VyIiwiYSI6ImNtamdla3lwdTBjZnozZHB2eXh6MGRtcnQifQ.EaYS4frA7x08nqWskhkYeQ';
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/standard',
+            center: [-122.273878, 37.799094],
+            zoom: 17.01,
+            cooperativeGestures: true
+        });
+
+        // Add navigation controls
+        map.addControl(new mapboxgl.NavigationControl());
+
+        // Add a marker at the location
+        new mapboxgl.Marker()
+            .setLngLat([-122.273878, 37.799094])
+            .addTo(map);
+    </script>
 </body>
 </html>
