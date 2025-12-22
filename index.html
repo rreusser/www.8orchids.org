@@ -19,7 +19,7 @@
             </div>
             <div class="header-right">
                 <div class="header-address">
-                    <p>423 7th Street, Oakland, CA 94607</p>
+                  <p>423 7<sup>th</sup> Street<br>Oakland, CA 94607</p>
                 </div>
                 <nav class="header-nav">
                     <a href="#" class="sign-in-link">Sign in</a>
@@ -45,7 +45,7 @@
                 <div class="documents">
                     <h2>Information</h2>
                     <address>
-                        423 7th Street<br>
+                      423 7<sup>th</sup> Street<br>
                         Oakland, CA 94607
                     </address>
 
@@ -81,6 +81,33 @@
         new mapboxgl.Marker()
             .setLngLat([-122.273878, 37.799094])
             .addTo(map);
+    </script>
+
+    <script>
+        // Parallax effect for building photo
+        const buildingPhoto = document.querySelector('.building-photo');
+        const header = document.querySelector('header');
+        const hero = document.querySelector('.hero');
+        const parallaxSpeed = 0.3;
+
+        function handleParallax() {
+            const scrolled = window.pageYOffset;
+            const headerHeight = header.offsetHeight;
+            const heroHeight = hero.offsetHeight;
+
+            // Image extends 30% above the hero container
+            const imageExtraHeight = heroHeight * 0.3;
+
+            const baseShift = imageExtraHeight;
+            const parallaxShift = (scrolled - headerHeight) * parallaxSpeed;
+            const totalShift = baseShift + parallaxShift;
+
+            buildingPhoto.style.transform = `translateY(${totalShift}px)`;
+        }
+
+        window.addEventListener('scroll', handleParallax, { passive: true });
+        window.addEventListener('resize', handleParallax);
+        handleParallax(); // Initialize on load
     </script>
 </body>
 </html>
